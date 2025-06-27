@@ -8,7 +8,7 @@ import "./Navbar.scss";
  * @param param0.items - An array of navigation items, each with a label, href, and optional active state.
  * @returns
  */
-const Navbar: FC<NavProps> = ({ variant = 'header', items = [] }) => {
+const Navbar: FC<NavProps> = ({ variant = 'navbar', items = [] }) => {
   /**
    * Renders a navigation bar with a list of items.
    * Each item can be a link or a plain text, and can be marked as active.
@@ -22,12 +22,12 @@ const Navbar: FC<NavProps> = ({ variant = 'header', items = [] }) => {
         {items?.map((item) => (
           <li
             key={item.label}
-            className={`cmp-navbar__item ${item.active ? "cmp-navbar__item--active" : ""}`}
+            className={`cmp-navbar__item`}
           >
             {item.href ? (
-              <Link className="cmp-navbar__link" to={item.href}>{item.label}</Link>
+              <Link className={`cmp-navbar__link ${item.active ? "cmp-navbar__link--active" : ""}`} to={item.href}>{item.label}</Link>
             ) : (
-              <span className="cmp-navbar__text">{item.label}</span>
+              <span className={`cmp-navbar__link  ${item.active ? "cmp-navbar__text--active" : ""}`}>{item.label}</span>
             )}
           </li>
         ))}

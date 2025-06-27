@@ -24,6 +24,7 @@ $className: '.cmp-navbar';
         font-size: rem(16);
         font-weight: 400;
         transition: color 0.3s ease-in-out;
+        color: var(--color-black);
     }
 
     // Navbar CSS in header
@@ -32,34 +33,24 @@ $className: '.cmp-navbar';
 
         #{$className} {
             &__link {
+                padding-inline: rem(20);
                 color: var(--header-color-background);
                 display: block;
                 line-height: var(--header-mobile-height);
-
                 @include respond-to('lg', 'header') {
                     line-height: var(--header-height);
                     color: var(--header-color-text);
                 }
-            }
-
-            &__item {
-                padding-inline: rem(20);
-                
                 &--active {
                     background-color: var(--header-color-hover-background);
-                    #{$className}__link {
-                        color: var(--header-color-text);
-                    }
+                    color: var(--header-color-text);
                 }
 
                 &:hover {
                     background-color: var(--header-color-hover-background);
-                    #{$className}__link {
-                        color: var(--header-color-text);
-                    }
+                    color: var(--header-color-text);
                 }
             }
-
             &__menu {
                 display: none;
                 position: absolute;
