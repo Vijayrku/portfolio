@@ -15,10 +15,10 @@ export const Default: Story = {
     logoText: 'My Logo',
     logoUrl: '/',
     items: [
-      { label: 'Home', href: '/', active: true },
-      { label: 'About', href: '/about', active: false },
-      { label: 'Contact', href: '/contact', active: false },
-      { label: 'Blog', href: '/blog', active: false },
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about', },
+      { label: 'Contact', href: '/contact', },
+      { label: 'Blog', href: '/blog' },
     ],
     logoImage: '',
   }

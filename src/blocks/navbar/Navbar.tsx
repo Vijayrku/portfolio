@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { NavProps } from "./Navbar.props";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 /**
  *
@@ -25,7 +25,7 @@ const Navbar: FC<NavProps> = ({ variant = 'navbar', items = [] }) => {
             className={`cmp-navbar__item`}
           >
             {item.href ? (
-              <Link className={`cmp-navbar__link ${item.active ? "cmp-navbar__link--active" : ""}`} to={item.href}>{item.label}</Link>
+              <NavLink className={(({isActive}) => (isActive ? "cmp-navbar__link cmp-navbar__link--active" : "cmp-navbar__link"))} to={item.href}>{item.label}</NavLink>
             ) : (
               <span className={`cmp-navbar__link  ${item.active ? "cmp-navbar__text--active" : ""}`}>{item.label}</span>
             )}
