@@ -8,7 +8,7 @@ import "./Navbar.scss";
  * @param param0.items - An array of navigation items, each with a label, href, and optional active state.
  * @returns
  */
-const Navbar: FC<NavProps> = ({ items }) => {
+const Navbar: FC<NavProps> = ({ variant = 'header', items = [] }) => {
   /**
    * Renders a navigation bar with a list of items.
    * Each item can be a link or a plain text, and can be marked as active.
@@ -17,7 +17,7 @@ const Navbar: FC<NavProps> = ({ items }) => {
    * @returns {JSX.Element} The rendered navigation bar component.
    */
   return (
-    <nav className="cmp-navbar">
+    <nav className={`cmp-navbar cmp-navbar--in-${variant}`}>
       <ul className="cmp-navbar__menu">
         {items?.map((item) => (
           <li

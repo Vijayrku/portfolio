@@ -18,5 +18,6 @@ export const Default: Story = {
       { label: 'Contact', href: '/contact', active: false },
       { label: 'Blog', href: '/blog', active: false },
     ],
+    variant: 'header',
   }
 };

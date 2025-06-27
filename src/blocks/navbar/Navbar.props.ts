@@ -4,4 +4,5 @@ export type NavProps = {
         href: string;
         active?: boolean;
     }>;
+    variant: "header" | "navbar";
 }

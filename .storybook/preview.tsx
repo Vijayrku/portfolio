@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import '../src/styles/index.scss';
 const preview: Preview = {
   parameters: {
+  layout: 'fullscreen',
     controls: {
       matchers: {
         color: /(background|color)$/i,

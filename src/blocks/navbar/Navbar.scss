@@ -3,7 +3,6 @@
 $className: '.cmp-navbar';
 
 #{$className} {
-    container-type: inline-size;
     &__menu {
         display: flex;
         flex-direction: column;
@@ -18,19 +17,74 @@ $className: '.cmp-navbar';
             flex-direction: row;
         }
     }
-    &__item {
-        padding: rem(6) rem(12);
-    }
 
     &__link {
         text-decoration: none;
-        color: var(--color-text);
         font-family: var(--font-family);
         font-size: rem(16);
         font-weight: 400;
         transition: color 0.3s ease-in-out;
-        &:hover {
-            color: var(--color-primary);
+    }
+
+    // Navbar CSS in header
+    &--in-header {
+        height: inherit;
+
+        #{$className} {
+            &__link {
+                color: var(--header-color-background);
+                display: block;
+                line-height: var(--header-mobile-height);
+
+                @include respond-to('lg', 'header') {
+                    line-height: var(--header-height);
+                    color: var(--header-color-text);
+                }
+            }
+
+            &__item {
+                padding-inline: rem(20);
+                
+                &--active {
+                    background-color: var(--header-color-hover-background);
+                    #{$className}__link {
+                        color: var(--header-color-text);
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--header-color-hover-background);
+                    #{$className}__link {
+                        color: var(--header-color-text);
+                    }
+                }
+            }
+
+            &__menu {
+                display: none;
+                position: absolute;
+                top: var(--header-mobile-height);
+                left: 0;
+                width: 100%;
+                height: auto;
+                z-index: 1000;
+                box-shadow: 0px 10px 10px rgb(0 0 0 / 8%);
+                @include respond-to('lg', 'header') {
+                    display: flex;
+                    position: static;
+                    width: 100%;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &--shown {
+                    display: block;
+                }
+            }
+        }
+
+        @include respond-to('lg', 'header') {
+            display: flex;
         }
     }
 }

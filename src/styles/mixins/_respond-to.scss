@@ -2,13 +2,20 @@
 @use 'sass:list';
 @use "./../variables" as *;
 
-@mixin respond-to($breakpoint) {
+@mixin respond-to($breakpoint, $name: '') {
 
     @each $bp, $list in $breakpoints {
     $size: list.nth($list, $n: 1);
     @if $breakpoint == $bp {
-        @container (min-width: #{$size}) {
-            @content;
+        @if $name == null {
+            @media screen and (min-width: #{$size}) {
+                @content;
+            }
+        }
+        @else {
+            @container #{$name} (min-width: #{$size}) {
+                @content;
+            }
         }
     }
     }

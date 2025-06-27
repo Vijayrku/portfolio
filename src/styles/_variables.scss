@@ -11,7 +11,22 @@ $breakpoints: (
 $defaultSize: 16;
 
 :root {
+    // Font Variables
     --font-family: 'Roboto', sans-serif;
     --font-family-bold: 'Roboto-Bold', sans-serif;
     --font-family-semibold: 'Roboto-SemiBold', sans-serif;
+
+    //Color Variables
+    --color-black: #000000;
+    --color-white: #ffffff;
+    
+    //Header Variables
+    --header-color-background: #0b132b;
+    --header-color-hover-background: #1c2541;
+    --header-color-text: #ffffff;
+    --header-height: 60px;
+    --header-mobile-height: 45px;
+    // Footer Variables
+    --footer-color-background: #f5f5f5;
+    --footer-color---text: #757575;
 }
