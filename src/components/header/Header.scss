@@ -1,0 +1,50 @@
+$className: '.cmp-header';
+@use '/src/styles/functions/rem' as *;
+@use '/src/styles/mixins/respond-to' as *;
+
+
+#{$className} {
+    container-type: inline-size;
+    container-name: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header-color-background);
+    height: var(--header-mobile-height);
+    padding-inline: rem(16);
+
+    @include respond-to('lg', null) {
+        height: var(--header-height);
+    }
+
+    &__logo {
+        text-decoration: none;
+        text-align: left;
+        display: block;
+        width: 100%;
+        @include respond-to('lg', 'header') {
+            width: rem(120);
+            height: auto;
+        }
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-size: rem(16);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: rem(10);
+        color: var(--header-color-text);
+    }
+
+    &__toggle {
+        background: none;
+        border: none;
+        @include respond-to('lg', 'header') {
+            display: none;
+        }
+        span {
+            color: var(--header-color-text);
+        }
+    }
+}
