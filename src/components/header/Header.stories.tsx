@@ -11,5 +11,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {}
+  args: {
+    logoText: 'My Logo',
+    logoUrl: '/',
+    items: [
+      { label: 'Home', href: '/', active: true },
+      { label: 'About', href: '/about', active: false },
+      { label: 'Contact', href: '/contact', active: false },
+      { label: 'Blog', href: '/blog', active: false },
+    ],
+    logoImage: '',
+  }
 };
