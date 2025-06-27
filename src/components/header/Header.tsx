@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = ({ logoText, logoUrl, items, logoImage }) => {
 
   const toogleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.currentTarget;
-    const span = target.querySelector("span");
+    const span = target?.querySelector("span");
     if (!span) {
       console.warn("Toggle button does not contain a span element");
       return;
