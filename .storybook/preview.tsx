@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
 import { BrowserRouter } from 'react-router-dom';
+import '../src/styles/index.scss';
 const preview: Preview = {
   parameters: {
     controls: {

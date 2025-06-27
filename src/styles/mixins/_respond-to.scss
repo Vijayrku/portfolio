@@ -1,18 +1,15 @@
 // _mixins.scss
 @use 'sass:list';
-@use "./../grid" as *;
+@use "./../variables" as *;
 
 @mixin respond-to($breakpoint) {
 
     @each $bp, $list in $breakpoints {
     $size: list.nth($list, $n: 1);
-    @debug "Breakpoint `#{$breakpoint}` found with size: #{$bp} and size value: #{$size}";
     @if $breakpoint == $bp {
-        @media (min-width: $size) {
-        @content;
+        @container (min-width: #{$size}) {
+            @content;
         }
-    } @else {
-        @warn "Breakpoint `#{$breakpoint}` not found in \$breakpoints map.";
     }
     }
 

@@ -1,3 +1,15 @@
+
+$columns: 12;
+$gutter: 16;
+$breakpoints: (
+  'xs': (0, 4),
+  'sm': (576px, 4),
+  'md': (768px, 8),
+  'lg': (1024px, 12),
+  'xl': (1366px, 12),
+);
+$defaultSize: 16;
+
 :root {
     --font-family: 'Roboto', sans-serif;
     --font-family-bold: 'Roboto-Bold', sans-serif;
