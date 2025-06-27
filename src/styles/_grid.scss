@@ -1,0 +1,31 @@
+@use 'sass:list';
+
+
+$columns: 12;
+$gutter: 16px;
+$breakpoints: (
+  'xs': (0, 4),
+  'sm': (576px, 4),
+  'md': (768px, 8),
+  'lg': (1024px, 12),
+  'xl': (1366px, 12),
+);
+
+@each $breakpoint, $list in $breakpoints {
+    $col: list.nth($list, $n: 2);
+    $bp: list.nth($list, $n: 1);
+    @media (min-width: $bp) {
+        .cmp-grid {
+            display: grid;
+            column-gap: $gutter;
+            grid-template-columns: repeat($col, 1fr);
+        }
+
+        @for $i from 1 through $col {
+            .col-#{$breakpoint}-#{$i} {
+                grid-column: span $i;
+            }
+        }
+
+    }
+}

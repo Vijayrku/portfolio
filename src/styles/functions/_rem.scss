@@ -1,0 +1,9 @@
+@function rem($value) {
+  @if type-of($value) == 'number' {
+    @return $value / 20 * 1rem;
+  } @else if type-of($value) == 'string' {
+    @return $value;
+  } @else {
+    @error "Invalid type for rem function: #{type-of($value)}. Expected number or string.";
+  }
+}

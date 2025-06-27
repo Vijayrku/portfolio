@@ -1,0 +1,4 @@
+@use '/src/styles/functions/rem' as *;
+.cmp-button {
+    font-size: rem(16);
+}
