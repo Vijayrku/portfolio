@@ -1,9 +1,9 @@
 import Header from "../../components/header/Header";
 
-const Home = () => {
+const Dashboard = () => {
   return (
-    <>
-      <Header
+    <div className="dashboard">
+              <Header
         items={[
           { label: "Home", href: "/" },
           { label: "Dashboard", href: "/dashboard" },
@@ -14,8 +14,10 @@ const Home = () => {
         logoText="Logo"
         logoUrl="/"
       />
-    </>
+      <h1>Dashboard</h1>
+      <p>Welcome to the dashboard!</p>
+    </div>
   );
-};
+}
 
-export default Home;
+export default Dashboard;
