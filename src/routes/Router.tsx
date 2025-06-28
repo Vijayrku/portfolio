@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { HomePage } from "./routes";
+import { DashboardPage, HomePage } from "./routes";
 
 
 const Router = () => {
@@ -8,6 +8,10 @@ const Router = () => {
        <Route
         path="/"
         element={<HomePage/>}
+      />
+      <Route
+        path="/dashboard"
+        element={<DashboardPage/>}
       />
     </Routes>
   );
