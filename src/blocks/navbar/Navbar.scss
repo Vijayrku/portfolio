@@ -40,14 +40,14 @@ $className: ".cmp-navbar";
         line-height: var(--header-height);
         color: var(--header-color-text);
       }
-      &--active {
-        background-color: var(--header-color-hover-background);
-        color: var(--header-color-text);
-      }
-
+      &--active,
       &:hover {
-        background-color: var(--header-color-hover-background);
-        color: var(--header-color-text);
+        background-color: var(--header-color-hover-mobile-background);
+        color: var(--header-color-hover-background);
+        @include respond-to("lg", "header") {
+            background-color: var(--header-color-hover-background);
+            color: var(--header-color-text);
+        }
       }
     }
 
